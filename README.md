@@ -145,30 +145,4 @@ Aplicación educativa que combina un chatbot inteligente con reconocimiento de i
 
 1. En la sección de "Reconocimiento de Objetos", haz clic en "Activar Cámara"
 2. Permite el acceso a la cámara web cuando el navegador lo solicite
-3. Enfoca un objeto y haz clic en "Capturar"
-4. El sistema detectará el objeto y te ofrecerá aprender cómo se escribe
-
-### Ejercicios Interactivos
-
-1. Desplázate hacia abajo para encontrar los ejercicios interactivos
-2. Completa los ejercicios siguiendo las instrucciones en pantalla
-3. Obtendrás retroalimentación inmediata sobre tus respuestas
-
-## Notas Adicionales
-
-- **Seguridad**: Las contraseñas se almacenan hasheadas (SHA-256)
-- **Base de datos**: Se utiliza un sistema FIFO para operaciones asíncronas
-- **Sesiones**: La sesión de usuario se mantiene por 24 horas
-- **APIs externas**: El rendimiento del reconocimiento depende de las APIs DeepAI y Wit.ai
-- **Compatibilidad**: Para mejor experiencia, usa navegadores actualizados (Chrome, Firefox, Edge)
-
-## Solución de Problemas
-
-- **Error de conexión a base de datos**: Verifica que PostgreSQL esté en ejecución y que las credenciales en el archivo `.env` sean correctas
-- **Error de cámara**: Asegúrate de permitir el acceso a la cámara y usar HTTPS en producción
-- **Problemas con las APIs**: Verifica que tus claves API sean válidas y que tengas conexión a internet
-
-## Licencia
-
-Este proyecto es de código abierto y está disponible bajo la licencia MIT.
-
+3. Enfoca un objeto y haz clic en "Captu
