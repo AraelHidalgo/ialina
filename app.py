@@ -34,13 +34,7 @@ CONVERSATION_CONTEXT = defaultdict(dict)
 DEEPAI_API_KEY = os.getenv('DEEPAI_API_KEY')
 WIT_API_TOKEN = os.getenv('WIT_API_TOKEN')
 
-# Configuración de la base de datos PostgreSQL
-DB_HOST = os.getenv('DB_HOST', 'localhost')
-DB_PORT = os.getenv('DB_PORT', '5432')
-DB_NAME = os.getenv('DB_NAME', 'ialina_db')
-DB_USER = os.getenv('DB_USER', 'ialina_user')
-DB_PASSWORD = os.getenv('DB_PASSWORD', '12345')
-
+# Configuración de la base de datos
 # Base de conocimiento mejorada
 RESPONSES = {
     "saludo": [
@@ -84,24 +78,24 @@ LETTER_EXAMPLES = {
 }
 
 # Configuración del Pool de conexiones a PostgreSQL
+# URL de conexión directa con sslmode=require
+DATABASE_URL = os.getenv('DATABASE_URL', "postgresql://ialina_user:memluFpWseseh6i3zjtds1OTYLIJZJTP@dpg-d0kleubuibrs739klrrg-a.oregon-postgres.render.com/ialina_db")
+
+# Configuración del Pool de conexiones a PostgreSQL
 db_pool = None
 try:
     db_pool = pool.ThreadedConnectionPool(
         minconn=1,
         maxconn=10,
-        host=DB_HOST,
-        port=DB_PORT,
-        dbname=DB_NAME,
-        user=DB_USER,
-        password=DB_PASSWORD
+        dsn=DATABASE_URL  # Usando la URL directamente
     )
     # Inicializar el pool en el módulo FIFO
     set_db_pool(db_pool)
-    print(f"Conexión a la base de datos establecida correctamente en {DB_HOST}:{DB_PORT}/{DB_NAME}")
+    print("Conexión a la base de datos establecida correctamente")
 except Exception as e:
     db_pool = None
     print(f"Error al conectar a la base de datos: {e}")
-
+    
 def get_db_connection():
     """Obtiene una conexión del pool"""
     if db_pool:
