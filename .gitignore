@@ -1,5 +1,6 @@
 # Credentials and environment variables
 .env
+
 .env.local
 .env.development
 .env.test
