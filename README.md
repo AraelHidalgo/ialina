@@ -1,4 +1,4 @@
-# Asistente Educativo - FuncionaBD
+# Asistente Educativo
 
 Aplicación educativa que combina un chatbot inteligente con reconocimiento de imágenes y ejercicios interactivos para ayudar a los usuarios a aprender a leer y escribir de forma divertida e interactiva.
 
